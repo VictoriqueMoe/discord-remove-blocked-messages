@@ -1,13 +1,12 @@
 import 'reflect-metadata';
+import {container, singleton} from "tsyringe";
 import {Observable} from "./Observable";
 import {DiscordMessageEvent} from "./decorators/DiscordMessageEvent";
-import {container, singleton} from "tsyringe";
-import {PageInterceptor} from "./PageInterceptor";
 import {PostConstruct} from "./decorators/PostConstruct";
+import {PageInterceptor} from "./impl/PageInterceptor";
 
 @singleton()
 class DiscordChatObserver implements Observable {
-
 
     public removeElm(elms: Element[]): void {
         for (let elm of elms) {
@@ -51,3 +50,4 @@ class DiscordChatObserver implements Observable {
         });
     }
 }
+container.resolve(DiscordChatObserver);

@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "reflect-metadata": "^0.1.13",
+    "terser-webpack-plugin": "^5.3.7",
     "tsyringe": "^4.7.0"
   }
 }

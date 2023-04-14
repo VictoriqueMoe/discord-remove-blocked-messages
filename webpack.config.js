@@ -1,5 +1,6 @@
 module.exports = env => {
     const path = require("path");
+    const TerserPlugin = require("terser-webpack-plugin");
     const webpack = require("webpack");
     const fs = require('fs');
     const METADATA = fs.readFileSync('./GM.txt', 'utf8');
@@ -19,6 +20,19 @@ module.exports = env => {
                     use: ['style-loader', 'css-loader']
                 },
             ]
+        },
+        optimization: {
+            minimize: false,
+            minimizer: [
+                new TerserPlugin({
+                    terserOptions: {
+                        format: {
+                            comments: true,
+                        },
+                    },
+                    extractComments: false,
+                }),
+            ],
         },
         mode,
         resolve: {

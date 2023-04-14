@@ -1,6 +1,6 @@
 import {container, InjectionToken} from "tsyringe";
-import {DiscordMutatorProxy} from "../DiscordMutatorProxy";
 import {Observable} from "../Observable";
+import {DiscordMutatorProxy} from "../impl/DiscordMutatorProxy";
 
 export function DiscordMessageEvent(target: unknown, propertyKey: string, descriptor: PropertyDescriptor) {
     const constructor = target.constructor as InjectionToken<Observable>;

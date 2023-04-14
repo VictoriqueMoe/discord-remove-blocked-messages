@@ -1,7 +1,6 @@
-import {container, singleton} from "tsyringe";
-import {Observable} from "./Observable";
-import {PostConstruct} from "./decorators/PostConstruct";
-import {PageInterceptor} from "./PageInterceptor";
+import {singleton} from "tsyringe";
+import {Observable} from "../Observable";
+import {PostConstruct} from "../decorators/PostConstruct";
 
 @singleton()
 export class DiscordMutatorProxy {
