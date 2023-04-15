@@ -7,18 +7,18 @@ export class PageInterceptor {
 
     }
 
-    public async pageChange(callBack: () => void): Promise<void> {
+    public async pageChange(callBack: (mutation: MutationRecord) => void): Promise<void> {
         window.onload = () => {
             let oldHref = document.location.href;
             const body = document.querySelector("body");
             const observer = new MutationObserver(mutations => {
-                mutations.forEach(() => {
+                for (const mutation of mutations) {
                     if (oldHref !== document.location.href) {
                         oldHref = document.location.href;
                         this._discordMutatorProxy.init();
-                        callBack();
+                        callBack(mutation);
                     }
-                });
+                }
             });
             observer.observe(body, {childList: true, subtree: true});
         };
