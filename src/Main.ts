@@ -10,7 +10,7 @@ class DiscordChatObserver implements Observable {
 
     public removeElm(elms: Element[]): void {
         for (let elm of elms) {
-            elm.remove();
+            (elm as HTMLElement).style.display = "none";
         }
     }
 
@@ -50,4 +50,5 @@ class DiscordChatObserver implements Observable {
         });
     }
 }
+
 container.resolve(DiscordChatObserver);
