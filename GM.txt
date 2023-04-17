@@ -2,7 +2,7 @@
 // @name         Discord blocker remover
 // @namespace    victorique.moe
 // @version      1.0.0
-// @description  Remove blocked users messages totally
+// @description  Hide blocked users messages
 // @author       Victorique
 // @match        https://discord.com/channels/*
 // @grant        none
